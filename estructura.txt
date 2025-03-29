@@ -1,0 +1,213 @@
+Listado de rutas de carpetas para el volumen Windows-SSD
+El número de serie del volumen es 449A-6DAF
+C:.
+¦   .env
+¦   .gitignore
+¦   .htaccess
+¦   composer.json
+¦   composer.lock
+¦   estructura.txt
+¦   index.html
+¦   README.md
+¦   
++---.vscode
+¦       sftp.json
+¦       
++---assets
+¦   +---css
+¦   ¦       admin.css
+¦   ¦       disco01.css
+¦   ¦       discografia.css
+¦   ¦       inicio.css
+¦   ¦       login.css
+¦   ¦       navbar.css
+¦   ¦       slider-styles.css
+¦   ¦       style.css
+¦   ¦       titulos.css
+¦   ¦       
+¦   +---fonts
+¦   ¦       eras-itc-bold.ttf
+¦   ¦       
+¦   +---img
+¦   ¦       default_musica.png
+¦   ¦       escenario.png
+¦   ¦       inicio.png
+¦   ¦       liner_04.png
+¦   ¦       line_01.png
+¦   ¦       line_02.png
+¦   ¦       line_03.png
+¦   ¦       line_05.png
+¦   ¦       
+¦   +---js
+¦           discografia.js
+¦           get_tracks.js
+¦           index.js
+¦           index2.js
+¦           inicio.js
+¦           navbar.js
+¦           slider-script copy.js
+¦           slider-script.js
+¦           
++---php
+¦       .htaccess
+¦       admin.php
+¦       admin_upload.php
+¦       config.php
+¦       file.json
+¦       get_latest_album.php
+¦       get_tracks.php
+¦       get_videos.php
+¦       login.php
+¦       logout.php
+¦       send_mail.php
+¦       spotify_auth.php
+¦       test_connection.php
+¦       
++---public
++---uploads
+¦       .htaccess
+¦       upload_songs_here.txt
+¦       
++---vendor
+    ¦   autoload.php
+    ¦   
+    +---composer
+    ¦       autoload_classmap.php
+    ¦       autoload_files.php
+    ¦       autoload_namespaces.php
+    ¦       autoload_psr4.php
+    ¦       autoload_real.php
+    ¦       autoload_static.php
+    ¦       ClassLoader.php
+    ¦       installed.json
+    ¦       installed.php
+    ¦       InstalledVersions.php
+    ¦       LICENSE
+    ¦       platform_check.php
+    ¦       
+    +---graham-campbell
+    ¦   +---result-type
+    ¦       ¦   composer.json
+    ¦       ¦   LICENSE
+    ¦       ¦   
+    ¦       +---src
+    ¦               Error.php
+    ¦               Result.php
+    ¦               Success.php
+    ¦               
+    +---phpoption
+    ¦   +---phpoption
+    ¦       ¦   composer.json
+    ¦       ¦   LICENSE
+    ¦       ¦   
+    ¦       +---src
+    ¦           +---PhpOption
+    ¦                   LazyOption.php
+    ¦                   None.php
+    ¦                   Option.php
+    ¦                   Some.php
+    ¦                   
+    +---symfony
+    ¦   +---polyfill-ctype
+    ¦   ¦       bootstrap.php
+    ¦   ¦       bootstrap80.php
+    ¦   ¦       composer.json
+    ¦   ¦       Ctype.php
+    ¦   ¦       LICENSE
+    ¦   ¦       README.md
+    ¦   ¦       
+    ¦   +---polyfill-mbstring
+    ¦   ¦   ¦   bootstrap.php
+    ¦   ¦   ¦   bootstrap80.php
+    ¦   ¦   ¦   composer.json
+    ¦   ¦   ¦   LICENSE
+    ¦   ¦   ¦   Mbstring.php
+    ¦   ¦   ¦   README.md
+    ¦   ¦   ¦   
+    ¦   ¦   +---Resources
+    ¦   ¦       +---unidata
+    ¦   ¦               caseFolding.php
+    ¦   ¦               lowerCase.php
+    ¦   ¦               titleCaseRegexp.php
+    ¦   ¦               upperCase.php
+    ¦   ¦               
+    ¦   +---polyfill-php80
+    ¦       ¦   bootstrap.php
+    ¦       ¦   composer.json
+    ¦       ¦   LICENSE
+    ¦       ¦   Php80.php
+    ¦       ¦   PhpToken.php
+    ¦       ¦   README.md
+    ¦       ¦   
+    ¦       +---Resources
+    ¦           +---stubs
+    ¦                   Attribute.php
+    ¦                   PhpToken.php
+    ¦                   Stringable.php
+    ¦                   UnhandledMatchError.php
+    ¦                   ValueError.php
+    ¦                   
+    +---vlucas
+        +---phpdotenv
+            ¦   composer.json
+            ¦   LICENSE
+            ¦   
+            +---src
+                ¦   Dotenv.php
+                ¦   Validator.php
+                ¦   
+                +---Exception
+                ¦       ExceptionInterface.php
+                ¦       InvalidEncodingException.php
+                ¦       InvalidFileException.php
+                ¦       InvalidPathException.php
+                ¦       ValidationException.php
+                ¦       
+                +---Loader
+                ¦       Loader.php
+                ¦       LoaderInterface.php
+                ¦       Resolver.php
+                ¦       
+                +---Parser
+                ¦       Entry.php
+                ¦       EntryParser.php
+                ¦       Lexer.php
+                ¦       Lines.php
+                ¦       Parser.php
+                ¦       ParserInterface.php
+                ¦       Value.php
+                ¦       
+                +---Repository
+                ¦   ¦   AdapterRepository.php
+                ¦   ¦   RepositoryBuilder.php
+                ¦   ¦   RepositoryInterface.php
+                ¦   ¦   
+                ¦   +---Adapter
+                ¦           AdapterInterface.php
+                ¦           ApacheAdapter.php
+                ¦           ArrayAdapter.php
+                ¦           EnvConstAdapter.php
+                ¦           GuardedWriter.php
+                ¦           ImmutableWriter.php
+                ¦           MultiReader.php
+                ¦           MultiWriter.php
+                ¦           PutenvAdapter.php
+                ¦           ReaderInterface.php
+                ¦           ReplacingWriter.php
+                ¦           ServerConstAdapter.php
+                ¦           WriterInterface.php
+                ¦           
+                +---Store
+                ¦   ¦   FileStore.php
+                ¦   ¦   StoreBuilder.php
+                ¦   ¦   StoreInterface.php
+                ¦   ¦   StringStore.php
+                ¦   ¦   
+                ¦   +---File
+                ¦           Paths.php
+                ¦           Reader.php
+                ¦           
+                +---Util
+                        Regex.php
+                        Str.php
+                        

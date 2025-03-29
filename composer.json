@@ -1,0 +1,17 @@
+{
+    "name": "anahe/web_mitomania",
+    "autoload": {
+        "psr-4": {
+            "Anahe\\WebMitomania\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "anahenna",
+            "email": "anahenna@elsoftwerista.cl"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

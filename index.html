@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="author"
+      content="Anahenna Sanchez - María Salgado - Paulo Nadales / GatitosDevs"
+    />
+    <title>Mitomania</title>
+    <link
+      rel="shortcut icon"
+      href="assets/img/inicio.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- GoogleFonts poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_up"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
+    <link rel="stylesheet" href="./assets/css/titulos.css" />
+    <link rel="stylesheet" href="./assets/css/inicio.css" />
+    <link rel="stylesheet" href="./assets/css/discografia.css" />
+    <link rel="stylesheet" href="./assets/css/disco01.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/slider-styles.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar">
+      <div id="menu-icon">
+        <!-- Las tres líneas del menú -->
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="menu-modal">
+      <div id="modal-content">
+        <ul>
+          <li><a href="#inicio">INICIO</a></li>
+          <li><a href="#discografia">DISCOGRAFÍA</a></li>
+          <li><a href="#letras-musica">LETRAS</a></li>
+          <li><a href="#sec-videos">VIDEOS </a></li>
+          <li><a href="#contacto-rider">CONTACTANOS </a></li>
+          <li><a href="#rrss">REDES SOCIALES</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+
+    <!-- INICIO -->
+
+    <section id="inicio">
+      <!-- Canvas para las ondas animadas -->
+      <canvas id="backgroundCanvas"></canvas>
+      <div class="content">
+        <img src="./assets/img/inicio.png" alt="" id="imagen-inicio" />
+      </div>
+    </section>
+
+    <canvas id="lineAnimationCanvas"></canvas>
+
+    <!-- INICIO -->
+
+    <!-- DISCOGRAFÍA -->
+    <section id="discografia">
+      <div class="section-title-container">
+        <h2 class="section-title">DISCOGRAFÍA</h2>
+      </div>
+
+      <div class="album">
+        <div class="album-container">
+          <!-- Carátula del álbum -->
+          <div class="album-front">
+            <img
+              src="https://via.placeholder.com/700x700"
+              alt="Carátula del álbum"
+            />
+          </div>
+          <!-- Lista de canciones -->
+          <div class="album-back">
+            <ul>
+              <li>Canción 1</li>
+              <li>Canción 2</li>
+              <li>Canción 3</li>
+              <li>Canción 4</li>
+              <li>Canción 5</li>
+              <li>Canción 6</li>
+              <li>Canción 7</li>
+              <li>Canción 8</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- DISCOGRAFÍA -->
+
+    <!-- LETRAS MUSICA -->
+    <section id="letras-musica">
+      <div class="section-title-container">
+        <h2 class="section-title">LETRAS</h2>
+      </div>
+
+      <div class="music-lyrics-container">
+        <!-- Cuadro de la imagen -->
+        <div class="music-lyrics-box">
+          <img
+            src="./assets/img/default_musica.png"
+            alt="Imagen por defecto"
+            class="music-lyrics-image"
+          />
+        </div>
+
+        <div class="music-player-bars">
+          <div class="player-bar"></div>
+          <div class="player-bar"></div>
+          <div class="player-bar"></div>
+          <div class="player-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LETRAS MUSICA -->
+
+    <!-- VIDEOS MUSICALES -->
+    <section id="sec-videos">
+      <div class="section-title-container">
+        <h2 class="section-title">VIDEOS MUSICALES</h2>
+      </div>
+      <div class="gallery">
+        <div class="gallery-container">
+          <!-- <img
+                class="gallery-item gallery-item-1"
+          src="img/image2.png"
+          data-index="2"
+        /> -->
+
+          <iframe
+            data-item="1"
+            class="gallery-item gallery-item-1 ytvideo"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            data-item="2"
+            class="gallery-item gallery-item-2 ytvideo"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            data-item="3"
+            class="gallery-item gallery-item-3 ytvideo"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+
+          <!-- <img
+          class="gallery-item gallery-item-5"
+          src="img/image5.png"
+          data-index="5"
+          /> -->
+        </div>
+        <div class="gallery-controls">
+          <button class="gallery-controls-previous"></button>
+          <!-- <div class="dots"> -->
+          <span class="dot" data-item="1"></span>
+          <span class="dot active" data-item="2"></span>
+          <span class="dot" data-item="3"></span>
+          <!-- </div> -->
+          <button class="gallery-controls-next"></button>
+        </div>
+      </div>
+    </section>
+    <!-- VIDEOS MUSICALES -->
+
+    <!-- CONTACTANOS RIDER -->
+    <section id="contacto-rider" class="">
+      <div class="section-title-container">
+        <h2 class="section-title">CONTÁCTANOS</h2>
+      </div>
+      <div class="row">
+        <article class="col-lg-6">
+          <div id="card-form-container">
+            <div class="card-form">
+              <h6>¡Envíanos un mensaje!</h6>
+              <form id="contact-form">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  title="Ingresa tu nombre"
+                  placeholder="Nombre"
+                  required
+                  class="input-text"
+                />
+
+                <label for="email">Email</label>
+                <p id="email-error" class="pt-1 d-none">
+                  ¡Ingrese un email válido!
+                </p>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  title="Ingresa tu email"
+                  placeholder="Email"
+                  required
+                  class="input-text"
+                />
+
+                <label for="message">Mensaje</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  title="Escribe tu mensaje"
+                  placeholder="Mensaje"
+                  required
+                  aria-checked="true"
+                  rows="5"
+                ></textarea>
+                <div class="submit-container">
+                  <input
+                    type="submit"
+                    value="Enviar"
+                    class="btn"
+                    id="submit-btn"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </article>
+        <article id="rider" class="col-lg-6">
+          <h2 class="titulo">RIDER TÉCNICO</h2>
+          <a
+            href="https://drive.google.com/drive/folders/1XmxD1hi90OM63XtrII1W_B9ecRaeUV5W"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              id="rider-img"
+              src="assets/img/escenario.png"
+              alt="Llave de sol"
+          /></a>
+        </article>
+      </div>
+    </section>
+    <div id="form-loader" class="d-none">
+      <img
+        class="d-none"
+        id="img-form-loader"
+        src="assets/img/form-loader.png"
+        alt="disco mitomania"
+      />
+      <div id="form-response" class="d-none">
+        <h6>Resultado</h6>
+        <hr />
+        <p>comentario</p>
+        <button>Volver</button>
+      </div>
+    </div>
+
+    <!-- CONTACTANOS RIDER -->
+
+    <!-- FOOTER -->
+    <section id="rrss" class="redes bg-rrss container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-12 mt-5 text-center">
+          <!-- <h2>SIGUE NUESTRA REDES SOCIALES</h2> -->
+          <div id="rrss-icon-container" class="container">
+            <a href="https://www.youtube.com/@bandamitomania" target="_blank">
+              <svg
+                id="youtube-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+                class="my-icons"
+              >
+                <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
+                /></svg
+            ></a>
+            <a
+              href="https://open.spotify.com/artist/5xKK5hFACprzALHQzfbRHs?si=kdvbvFmXTxWpFexrcIjHQQ&fbclid=PAZXh0bgNhZW0CMTEAAaZULnUhls_ylmD8462F3iERui-A8Swv8YmAmuzweLQdadrZ2OczlfCpYYs_aem_3HiZMD7Cq2rw_UAkcT6_8g&nd=1&dlsi=e5dd6e58002d49a1"
+              target="_blank"
+            >
+              <svg
+                id="spotify-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 496 512"
+                class="my-icons"
+              >
+                <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.instagram.com/mitomaniachile/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg
+                id="instagram-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                class="my-icons"
+              >
+                <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.tiktok.com/@mitomaniachile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                id="tiktok-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                class="my-icons"
+              >
+                <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- escribir codigo aqui -->
+    <footer>
+      <div class="footer-left">
+        <a href="/web_mitomania/php/login.php" class="admin-link"
+          >Administrador</a
+        >
+        <p>&copy; 2024 Mitomanía. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer-right">
+        <p id="btn-dev">Desarrollado con ❤️</p>
+      </div>
+    </footer>
+
+    <div id="modal-gatitos" class="fade">
+      <div id="dev-card">
+        <i id="closeM" class="fa-solid fa-xmark"></i>
+        <h6>GatitosDevs</h6>
+        <span class="dev">
+          <p>Anahenna Sanchez</p>
+          <a
+            href="https://www.linkedin.com/in/anahenna/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </span>
+
+        <span class="dev">
+          <p>Paulo Nadales</p>
+          <a
+            href="https://www.linkedin.com/in/pnadales"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/pnadales"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </span>
+      </div>
+    </div>
+    <!-- FOOTER -->
+
+    <span id="back-top" href="" class="fade">
+      <span id="arrow-up" class="material-symbols-outlined">
+        keyboard_arrow_up
+      </span>
+    </span>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="assets/js/get_tracks.js"></script>
+    <script src="assets/js/inicio.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/discografia.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/slider-script.js"></script>
+    <script src="assets/js/index2.js"></script>
+  </body>
+</html>

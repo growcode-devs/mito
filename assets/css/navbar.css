@@ -1,0 +1,124 @@
+/* General: Aplicar la fuente Inter */
+body, #menu-modal, #modal-content ul li a {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Navbar */
+  #navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #FF4DFF; /* Borde neón rosa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #navbar:hover {
+    transform: scale(1.1); /* Pequeña animación al pasar el mouse */
+  }
+  
+  /* Líneas del menú */
+  #menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .menu-line {
+    width: 30px;
+    height: 3px;
+    background: #FF4DFF; /* Color neón rosa */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Modal */
+  #menu-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(50, 50, 50, 0.7); /* Fondo gris oscuro con transparencia del 70% */
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+  }
+  
+  #modal-content {
+    border: 5px solid #FF4DFF; /* Bordes neón rosa */
+    box-shadow: 0 0 20px #FF4DFF, 0 0 40px #FF4DFF; /* Efecto de neón más intenso */
+    background: rgba(0, 0, 0, 0.9); /* Fondo negro con transparencia */
+    border-radius: 15px; /* Bordes semi redondeados */
+    text-align: center;
+    width: 40%; /* Más angosto */
+    max-width: 400px; /* Limita el ancho máximo */
+    height: 80%; /* Alto ajustado */
+    max-height: 90%; /* Limita la altura máxima */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar contenido verticalmente */
+    align-items: center;
+    overflow-y: auto; /* Scroll en caso de contenido extra */
+  }
+  
+  /* Centrar el <ul> verticalmente */
+  #modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar elementos verticalmente */
+    align-items: center;
+    height: 100%; /* Ocupa todo el alto del modal-content */
+  }
+  
+  #modal-content ul li {
+    margin: 15px 0; /* Espaciado entre elementos */
+  }
+  
+  /* Fondo para los enlaces del menú */
+/* Fondo para los enlaces del menú */
+  #modal-content ul li a {
+    text-decoration: none;
+    color: #FFFFFF; /* Texto blanco */
+    font-size: 1.5rem; /* Tamaño del texto */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    font-weight: 500; /* Fuente más ligera */
+    padding: 10px 25px; /* Espaciado interno */
+    border-radius: 50px; /* Bordes completamente redondeados */
+    background: linear-gradient(135deg, rgba(255, 77, 255, 0.1), rgba(255, 77, 255, 0.05)); /* Fondo degradado suave */
+    transition: all 0.3s ease-in-out; /* Transición suave para todos los efectos */
+  }
+
+  /* Efecto hover para enlaces del menú */
+  #modal-content ul li a:hover {
+    color: #1a1a1a; /* Texto gris oscuro */
+    background: linear-gradient(135deg, #FF4DFF, #FF77FF); /* Fondo degradado rosa intenso */
+    box-shadow: 0 8px 20px rgba(255, 77, 255, 0.5); /* Sombra suave */
+    transform: translateY(-3px); /* Eleva ligeramente el botón */
+  }
+
+
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    #modal-content {
+      width: 70%; /* Más angosto en pantallas pequeñas */
+      height: 70%; /* Ajustar altura en pantallas pequeñas */
+      padding: 20px;
+    }
+  
+    #modal-content ul li a {
+      font-size: 1.2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+  }
+  

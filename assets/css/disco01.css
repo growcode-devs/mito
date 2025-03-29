@@ -1,0 +1,166 @@
+/* Contenedor principal */
+.music-lyrics-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Cuadro de la imagen */
+/* Cuadro de la imagen */
+.music-lyrics-box {
+  width: 400px;
+  height: 400px;
+  background-color: #b3b3b3;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Evita desbordamientos */
+}
+
+/* Imagen */
+.music-lyrics-image {
+  max-width: 100%; /* Limita la imagen al tamaño del contenedor */
+  max-height: 100%; /* Limita la altura al tamaño del contenedor */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+  border-radius: 20px; /* Bordes redondeados para la imagen */
+}
+
+
+/* Contenedor de las barras */
+.music-player-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Barra de reproducción */
+.player-bar {
+  display: flex;
+  align-items: center;
+  background-color: #b3b3b3;
+  border-radius: 15px;
+  height: 80px; /* Incrementar la altura */
+  width: 1000px; /* Incrementar el ancho */
+  padding: 0 20px; /* Incrementar padding */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  gap: 15px; /* Incrementar el espaciado entre elementos */
+}
+
+/* Nombre de la canción */
+.track-name {
+  font-family: 'Inter', sans-serif; /* Fuente usada en el navbar */
+  font-size: 1.5rem; /* Incrementar tamaño de fuente */
+  font-weight: bold;
+  color: #000; /* Letras en negro */
+  margin-left: auto; /* Alinear al final */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Agrega "..." si el nombre es demasiado largo */
+}
+
+/* Botón de Play/Pausa */
+.play-pause-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem; /* Incrementar tamaño del botón */
+  cursor: pointer;
+}
+
+/* Contenedor de la barra de progreso */
+.progress-bar {
+  flex: 1;
+  height: 10px; /* Grosor de la barra */
+  background-color: #e0e0e0; /* Color claro (base) */
+  border-radius: 5px; /* Bordes redondeados */
+  overflow: hidden;
+  position: relative;
+  margin-left: 20px; /* Espacio entre barra y texto/botones */
+}
+
+/* Relleno dinámico */
+.progress-fill {
+  height: 100%; /* Coincide con la altura del contenedor */
+  width: 0%; /* Cambiará dinámicamente con JS */
+  background-color: #4caf50; /* Color oscuro (relleno) */
+  transition: width 0.1s linear; /* Suavidad en el cambio de ancho */
+}
+
+
+
+/* Ícono de Spotify */
+.spotify-icon {
+  color: #1db954;
+  font-size: 2rem; /* Incrementar tamaño */
+  text-decoration: none;
+  margin-right: 15px; /* Espaciado entre íconos */
+}
+
+/* Ícono de Letras */
+.lyrics-icon {
+  color: #ffffff;
+  font-size: 2rem; /* Incrementar tamaño */
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+/* Responsividad */
+@media (max-width: 1200px) {
+  .player-bar {
+    width: 800px; /* Ajuste para pantallas medianas */
+    height: 70px; /* Reducir ligeramente la altura */
+  }
+
+  .track-name {
+    font-size: 1.2rem; /* Reducir tamaño de fuente */
+  }
+
+  .play-pause-button,
+  .spotify-icon,
+  .lyrics-icon {
+    font-size: 1.8rem; /* Ajustar tamaño de íconos */
+  }
+}
+
+@media (max-width: 768px) {
+  .music-lyrics-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-bar {
+    width: 600px; /* Ajuste para pantallas pequeñas */
+    height: 60px;
+  }
+
+  .track-name {
+    font-size: 1rem; /* Reducir tamaño de fuente */
+  }
+
+  .play-pause-button,
+  .spotify-icon,
+  .lyrics-icon {
+    font-size: 1.5rem; /* Ajustar tamaño de íconos */
+  }
+}
+
+@media (max-width: 480px) {
+  .player-bar {
+    width: 400px; /* Ajuste para pantallas más pequeñas */
+    height: 50px;
+  }
+
+  .track-name {
+    font-size: 0.9rem; /* Reducir tamaño de fuente */
+  }
+
+  .play-pause-button,
+  .spotify-icon,
+  .lyrics-icon {
+    font-size: 1.2rem; /* Ajustar tamaño de íconos */
+  }
+}

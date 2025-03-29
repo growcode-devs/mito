@@ -1,0 +1,58 @@
+#inicio {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+
+#backgroundCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2; /* Encima del canvas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#imagen-inicio {
+  max-width: 90%; /* Tamaño inicial más pequeño */
+  max-height: 70%; /* Se asegura de que no supere el 70% de la altura del viewport */
+  object-fit: contain; /* Mantiene las proporciones de la imagen */
+  transition: all 0.3s ease-in-out; /* Transición suave para los cambios de tamaño */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+  #imagen-inicio {
+    max-width: 70%; /* Reduce el tamaño de la imagen en pantallas medianas */
+    max-height: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  #imagen-inicio {
+    max-width: 60%; /* Tamaño más pequeño en tabletas */
+    max-height: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  #imagen-inicio {
+    max-width: 50%; /* Tamaño más pequeño en teléfonos */
+    max-height: 40%;
+  }
+}
