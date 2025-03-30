@@ -1,0 +1,35 @@
+{
+    "date": "2025-03-29",
+    "latest_album": {
+        "album": {
+            "name": "Mitoman\u00eda",
+            "image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c"
+        },
+        "tracks": [
+            {
+                "name": "La Respuesta"
+            },
+            {
+                "name": "Mitomanos"
+            },
+            {
+                "name": "Isla Negra"
+            },
+            {
+                "name": "Pero Nunca Llegaste"
+            },
+            {
+                "name": "Nunca Quise Ir al Colegio"
+            },
+            {
+                "name": "Si Me Quisieras"
+            },
+            {
+                "name": "Helado de Invierno"
+            },
+            {
+                "name": "Quiero Bailar Contigo"
+            }
+        ]
+    }
+}

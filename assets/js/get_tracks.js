@@ -2,7 +2,7 @@ let tracksData = []; // Variable global para almacenar las canciones
 
 // Petición AJAX para obtener los datos
 $.ajax({
-  url: "http://localhost/growcode/web_mitomania/php/get_tracks.php", // Ruta al archivo PHP
+  url: "http://localhost/growcode/web_mitomania/php/some-new-code/get_top_four.php", // Ruta al archivo PHP
   method: "GET",
   dataType: "json",
   success: (response) => {
@@ -38,7 +38,7 @@ function populateMusicBars(tracks) {
     // Botón de reproducción
     const playButton = document.createElement("button");
     playButton.classList.add("play-pause-button");
-    playButton.setAttribute("onclick", `playPreview('${audioPath}', ${index})`);
+    playButton.setAttribute("onclick", `playPreview("${audioPath}", ${index})`);
     playButton.innerHTML = '<i class="fas fa-play"></i>';
     bar.appendChild(playButton);
 

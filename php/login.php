@@ -8,7 +8,7 @@ ini_set('display_errors', 1);
 
 // Si ya está autenticado, redirigir al panel
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) {
-    header('Location: /php/admin.php');
+    header('Location: admin.php');
     exit;
 }
 

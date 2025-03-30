@@ -15,7 +15,7 @@ $api_key = $_ENV['API_KEY'];
 header('Content-Type: application/json');
 $url = "https://www.googleapis.com/youtube/v3/search?key=$api_key&channelId=UCY_aA4xy4BG7rJm1goIFqpA&part=snippet&order=viewCount&type=video&maxResults=3";
 
-$contenido = file_get_contents("file.json");
+$contenido = file_get_contents("cache_videos.json");
 $data = json_decode($contenido, true);
 
 if ($data["date"] == date("Y-m-d")) {
@@ -45,7 +45,7 @@ if ($data["date"] == date("Y-m-d")) {
     $data["videos"] = $videos;
     $data["date"] = date("Y-m-d");
 
-    file_put_contents("file.json", json_encode($data, JSON_PRETTY_PRINT));
+    file_put_contents("cache_videos.json", json_encode($data, JSON_PRETTY_PRINT));
     echo json_encode([
         "status" => 200,
         "success" => true,
