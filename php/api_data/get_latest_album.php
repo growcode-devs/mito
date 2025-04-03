@@ -6,8 +6,9 @@ error_reporting(E_ALL);
 
 include(__DIR__ . '/../spotify_auth.php');
 
-function get_spotify_album()
+function get_spotify_latest_album()
 {
+
 
 
     // ID del artista en Spotify
@@ -82,8 +83,27 @@ function get_spotify_album()
         }, $decodedTracks['items'])
     ];
     return $formattedAlbum;
+
+    // Devolver el JSON al frontend
+    // header('Content-Type: application/json');
+    // echo json_encode($formattedAlbum);
 }
+
+
+$album_cache = file_get_contents('cache_latest_album.json');
+$data = json_decode($album_cache, true);
+
+if ($data["date"] == date("Y-m-d")) {
+} else {
+    $api_data = get_spotify_latest_album();
+    $data["date"] = date("Y-m-d");
+    $data["album"] = $api_data;
+
+    file_put_contents("cache_latest_album.json", json_encode($data, JSON_PRETTY_PRINT));
+}
+// return $data['album']['album'];
+
+
 // Devolver el JSON al frontend
-// header('Content-Type: application/json');
-// echo json_encode($formattedAlbum);
-// echo json_encode(get_spotify_album());
+header('Content-Type: application/json');
+echo json_encode($data['album']);

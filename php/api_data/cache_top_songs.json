@@ -1,0 +1,87 @@
+{
+    "date": "2025-04-03",
+    "songs": {
+        "top_tracks": [
+            {
+                "top": 1,
+                "name": "Ya Fue",
+                "album_name": "Ya Fue",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b273d9e25caa2d1362f83d0a1d03",
+                "url": "https:\/\/open.spotify.com\/track\/38yUdaaCIrc41TKXX5QYLu",
+                "spotify_id": "38yUdaaCIrc41TKXX5QYLu"
+            },
+            {
+                "top": 2,
+                "name": "Mitomanos",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/4lFuhKob8xQG82EuBJa1Qj",
+                "spotify_id": "4lFuhKob8xQG82EuBJa1Qj"
+            },
+            {
+                "top": 3,
+                "name": "Pero Nunca Llegaste",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/0K9Zk0Yp3FBrFybsBE1bsF",
+                "spotify_id": "0K9Zk0Yp3FBrFybsBE1bsF"
+            },
+            {
+                "top": 4,
+                "name": "Nunca Quise Ir al Colegio",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/7fm2V3SQnSnCAJCJ0nLhv7",
+                "spotify_id": "7fm2V3SQnSnCAJCJ0nLhv7"
+            },
+            {
+                "top": 5,
+                "name": "Si Me Quisieras",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/3QmnArCvOxElDrbLFmoVyj",
+                "spotify_id": "3QmnArCvOxElDrbLFmoVyj"
+            },
+            {
+                "top": 6,
+                "name": "Quiero Bailar Contigo",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/17KJo1lpKYdR37TgB4XHl6",
+                "spotify_id": "17KJo1lpKYdR37TgB4XHl6"
+            },
+            {
+                "top": 7,
+                "name": "Isla Negra",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/2ZlMnsJdK2yyvXUW8I5ugG",
+                "spotify_id": "2ZlMnsJdK2yyvXUW8I5ugG"
+            },
+            {
+                "top": 8,
+                "name": "La Respuesta",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/4f5rgEOHEr6bMP22TYGHFP",
+                "spotify_id": "4f5rgEOHEr6bMP22TYGHFP"
+            },
+            {
+                "top": 9,
+                "name": "Helado de Invierno",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/55J96FuEq1rYrOiDecDsbP",
+                "spotify_id": "55J96FuEq1rYrOiDecDsbP"
+            },
+            {
+                "top": 10,
+                "name": "\u00bfA Qu\u00e9 Hora?",
+                "album_name": "\u00bfA Qu\u00e9 Hora?",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b2736d7a6ccc3424649996c10692",
+                "url": "https:\/\/open.spotify.com\/track\/4h6TIrOzFNZPeXXF3yD4f3",
+                "spotify_id": "4h6TIrOzFNZPeXXF3yD4f3"
+            }
+        ]
+    }
+}

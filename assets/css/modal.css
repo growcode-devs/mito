@@ -1,0 +1,70 @@
+/* MODAL - Letras de Canción */
+.modal {
+    display: none; /* Asegurar que esté oculto al cargar la página */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contenedor del contenido del modal */
+.modal-content {
+    background: linear-gradient(135deg, #2c2c2c, #1b1b1b);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); /* Borde rosa neón */
+    border: 2px solid #ff00ff; /* Borde rosa neón */
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Título del modal */
+.modal-title {
+    font-size: 1.8rem;
+    color: #ff00ff; /* Rosa neón */
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+/* Texto dentro del modal */
+.modal-text {
+    font-size: 1.2rem;
+    color: #66fcf1; /* Celeste neón */
+    text-shadow: 0 0 5px #66fcf1;
+}
+
+/* Botón de cierre del modal */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-button:hover {
+    color: #ff00ff; /* Rosa neón */
+    transform: scale(1.2);
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

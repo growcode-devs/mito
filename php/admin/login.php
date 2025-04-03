@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/../config.php';
 
 // Activar reporte de errores
 error_reporting(E_ALL);
@@ -23,12 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $stmt->bind_result($password_hash);
     $stmt->fetch();
-    echo __DIR__;
+
+    // Verificar contraseña
     if ($password_hash && password_verify($password, $password_hash)) {
         $_SESSION['authenticated'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['last_activity'] = time();
-        header('Location: /growcode/web_mitomania/php/admin.php'); // Redirigir al área de administración
+        header('Location: admin.php'); // Redirigir al área de administración
         exit;
     } else {
         $error = 'Usuario o contraseña incorrectos.';
@@ -44,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Administración</title>
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../../assets/css/login.css">
 </head>
 
 <body>

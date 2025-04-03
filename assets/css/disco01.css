@@ -8,27 +8,25 @@
 }
 
 /* Cuadro de la imagen */
-/* Cuadro de la imagen */
 .music-lyrics-box {
   width: 400px;
   height: 400px;
   background-color: #b3b3b3;
   border-radius: 20px;
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Evita desbordamientos */
+  overflow: hidden;
 }
 
 /* Imagen */
 .music-lyrics-image {
-  max-width: 100%; /* Limita la imagen al tamaño del contenedor */
-  max-height: 100%; /* Limita la altura al tamaño del contenedor */
-  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
-  border-radius: 20px; /* Bordes redondeados para la imagen */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
-
 
 /* Contenedor de las barras */
 .music-player-bars {
@@ -43,86 +41,120 @@
   align-items: center;
   background-color: #b3b3b3;
   border-radius: 15px;
-  height: 80px; /* Incrementar la altura */
-  width: 1000px; /* Incrementar el ancho */
-  padding: 0 20px; /* Incrementar padding */
+  height: 80px;
+  width: 1000px;
+  padding: 0 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  gap: 15px; /* Incrementar el espaciado entre elementos */
+  gap: 15px;
 }
 
 /* Nombre de la canción */
 .track-name {
-  font-family: 'Inter', sans-serif; /* Fuente usada en el navbar */
-  font-size: 1.5rem; /* Incrementar tamaño de fuente */
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #000; /* Letras en negro */
-  margin-left: auto; /* Alinear al final */
-  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  color: #000;
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Agrega "..." si el nombre es demasiado largo */
+  text-overflow: ellipsis;
 }
 
-/* Botón de Play/Pausa */
-.play-pause-button {
+/* Estilos generales para los botones */
+.play-pause-button,
+.spotify-button,
+.lyrics-button {
   background: none;
   border: none;
-  color: #ffffff;
-  font-size: 2rem; /* Incrementar tamaño del botón */
+  font-size: 2rem; /* Mismo tamaño para todos los íconos */
   cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Botón de Play */
+.play-pause-button {
+  color: #ffffff;
+}
+
+/* Botón de Spotify */
+.spotify-button i {
+  color: #1db954 !important; /* Verde original de Spotify */
+  filter: none !important; /* Asegurar que no haya un filtro gris */
+  opacity: 1 !important; /* Asegurar que no tenga opacidad reducida */
+}
+
+.spotify-button:hover i {
+  transform: scale(1.2);
+  color: #1ed760 !important; /* Verde más claro al hacer hover */
+}
+
+/* Botón de Letras - Color gris oscuro por defecto */
+.lyrics-button i {
+  color: #575757 !important; /* Gris oscuro */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Botón de Letras - Cambia a rosa neón al hacer hover en desktop */
+@media (hover: hover) {
+  .lyrics-button:hover i {
+    color: #ff00ff !important; /* Rosa neón */
+    transform: scale(1.2);
+  }
 }
 
 /* Contenedor de la barra de progreso */
 .progress-bar {
   flex: 1;
-  height: 10px; /* Grosor de la barra */
-  background-color: #e0e0e0; /* Color claro (base) */
-  border-radius: 5px; /* Bordes redondeados */
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
   overflow: hidden;
   position: relative;
-  margin-left: 20px; /* Espacio entre barra y texto/botones */
+  margin-left: 20px;
 }
 
 /* Relleno dinámico */
 .progress-fill {
-  height: 100%; /* Coincide con la altura del contenedor */
-  width: 0%; /* Cambiará dinámicamente con JS */
-  background-color: #4caf50; /* Color oscuro (relleno) */
-  transition: width 0.1s linear; /* Suavidad en el cambio de ancho */
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  transition: width 0.1s linear;
 }
 
-
-
-/* Ícono de Spotify */
-.spotify-icon {
-  color: #1db954;
-  font-size: 2rem; /* Incrementar tamaño */
-  text-decoration: none;
-  margin-right: 15px; /* Espaciado entre íconos */
+/* Evitar que los iconos de Spotify y Letras sean grises cuando están deshabilitados */
+.disabled-icon i {
+  opacity: 0.5 !important;
+  filter: grayscale(100%) !important;
 }
 
-/* Ícono de Letras */
-.lyrics-icon {
-  color: #ffffff;
-  font-size: 2rem; /* Incrementar tamaño */
-  text-decoration: none;
-  margin-right: 15px;
+/* Asegurar que los iconos de Spotify y Letras tengan el color correcto aunque estén deshabilitados */
+.spotify-button i:not(.disabled-icon) {
+  color: #1db954 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.lyrics-button i:not(.disabled-icon) {
+  color: #575757 !important; /* Gris oscuro por defecto */
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 /* Responsividad */
 @media (max-width: 1200px) {
   .player-bar {
-    width: 800px; /* Ajuste para pantallas medianas */
-    height: 70px; /* Reducir ligeramente la altura */
+    width: 800px;
+    height: 70px;
   }
 
   .track-name {
-    font-size: 1.2rem; /* Reducir tamaño de fuente */
+    font-size: 1.2rem;
   }
 
   .play-pause-button,
-  .spotify-icon,
-  .lyrics-icon {
-    font-size: 1.8rem; /* Ajustar tamaño de íconos */
+  .spotify-button,
+  .lyrics-button {
+    font-size: 1.8rem;
   }
 }
 
@@ -133,34 +165,34 @@
   }
 
   .player-bar {
-    width: 600px; /* Ajuste para pantallas pequeñas */
+    width: 600px;
     height: 60px;
   }
 
   .track-name {
-    font-size: 1rem; /* Reducir tamaño de fuente */
+    font-size: 1rem;
   }
 
   .play-pause-button,
-  .spotify-icon,
-  .lyrics-icon {
-    font-size: 1.5rem; /* Ajustar tamaño de íconos */
+  .spotify-button,
+  .lyrics-button {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .player-bar {
-    width: 400px; /* Ajuste para pantallas más pequeñas */
+    width: 400px;
     height: 50px;
   }
 
   .track-name {
-    font-size: 0.9rem; /* Reducir tamaño de fuente */
+    font-size: 0.9rem;
   }
 
   .play-pause-button,
-  .spotify-icon,
-  .lyrics-icon {
-    font-size: 1.2rem; /* Ajustar tamaño de íconos */
+  .spotify-button,
+  .lyrics-button {
+    font-size: 1.2rem;
   }
 }

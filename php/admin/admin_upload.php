@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/../config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['song_file'])) {
     $title = $_POST['title'];
     $song_id = $_POST['spotify_id'];
     $file = $_FILES['song_file'];
-    $upload_dir = __DIR__ . '/../uploads/';
+    $upload_dir = __DIR__ . '/../../uploads/songs/';
     $allowed_extensions = ['mp3'];
 
     // Inicializar mensaje vacío
@@ -33,13 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['song_file'])) {
 
     //Eliminar el existente cuando es actualización
     if ($_POST['update']) {
-        $directorio = __DIR__ . '/../uploads/';
-        $archivos = scandir($directorio);
+        // $directorio = __DIR__ . '/../../uploads/songs/';
+        $archivos = scandir($upload_dir);
 
         foreach ($archivos as $archivo) {
             // echo $archivo . "<br>";
             if (str_contains($archivo, $song_id)) {
-                $archivo_a_eliminar = $directorio . $archivo;
+                $archivo_a_eliminar = $upload_dir . $archivo;
 
 
                 if (file_exists($archivo_a_eliminar)) {
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['song_file'])) {
 
     if ($_POST['update']) {
         // Guardar información en la base de datos
-        $stmt = $mysqli->prepare("UPDATE songs SET file_path = ? WHERE spotify_id = ?");
+        $stmt = $mysqli->prepare("UPDATE songs2 SET song_path = ? WHERE spotify_id = ?");
         $stmt->bind_param('ss',  $file_name, $song_id);
         if ($stmt->execute()) {
             $_SESSION['upload_message'] = "Canción actualizada exitosamente.";
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['song_file'])) {
             $_SESSION['upload_message'] = "Error al guardar en la base de datos: " . $stmt->error;
         }
     } else {
-        $stmt = $mysqli->prepare("INSERT INTO songs (title, file_path, spotify_id) VALUES (?, ?, ?)");
+        $stmt = $mysqli->prepare("INSERT INTO songs2 (title, song_path, spotify_id) VALUES (?, ?, ?)");
         $stmt->bind_param('sss', $title, $file_name, $song_id);
         if ($stmt->execute()) {
             $_SESSION['upload_message'] = "Canción subida exitosamente.";
@@ -80,6 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['song_file'])) {
         }
     }
     $stmt->close();
+} else {
+    die("Error: No file uploaded.");
 }
 
 $mysqli->close();

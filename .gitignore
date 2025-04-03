@@ -1,4 +1,7 @@
 .env
 php/vendor
 /vendor/
-uploads/*
+uploads/lyrics/*
+uploads/songs/*
+q.sql
+media/*

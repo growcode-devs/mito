@@ -1,41 +1,89 @@
 <?php
-
-//Cambiar origins en producción!!!
-header("Access-Control-Allow-Origin: *"); //!!!
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
-
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/spotify_auth.php';
 
-// Ruta base de los archivos subidos
-// $base_upload_url = 'https://srv1074-files.hstgr.io/2e7a29f86ffe80fc/files/public_html/uploads/';
-$base_upload_url = 'http://localhost/growcode/web_mitomania/uploads/';
+// Nueva base URL
+$base_upload_url = 'https://www.mitomaniachile.com/media/';
+$base_lyrics_url = 'https://www.mitomaniachile.com/lyrics/'; // Nueva URL base para las letras
 
-// Consulta para obtener las canciones más escuchadas desde la base de datos
-$query = "SELECT title AS name, file_path FROM songs ORDER BY id DESC LIMIT 4";
-$result = $mysqli->query($query);
+// Obtener las canciones más escuchadas de Spotify
+function getSpotifyTopTracks($artist_id, $access_token) {
+    $url = "https://api.spotify.com/v1/artists/$artist_id/top-tracks?market=CL";
+    $options = [
+        'http' => [
+            'header' => "Authorization: Bearer $access_token",
+            'method' => 'GET',
+        ],
+    ];
+    $context = stream_context_create($options);
+    $response = file_get_contents($url, false, $context);
 
-if (!$result) {
-    die(json_encode(['error' => 'Error al realizar la consulta: ' . $mysqli->error]));
+    if ($response === false) {
+        return ['error' => 'Unable to fetch data from Spotify API'];
+    }
+
+    $decodedResponse = json_decode($response, true);
+
+    if (!isset($decodedResponse['tracks']) || empty($decodedResponse['tracks'])) {
+        return ['error' => 'No tracks data returned from Spotify API'];
+    }
+
+    return array_slice($decodedResponse['tracks'], 0, 4); // Devuelve las primeras 4 canciones
 }
 
-// Extraer las canciones en un arreglo
-$tracks = [];
-while ($row = $result->fetch_assoc()) {
-    $tracks[] = [
-        'name' => $row['name'],
-        'file_path' => $base_upload_url . $row['file_path'], // Construir la URL completa
+// ID del artista en Spotify
+$artist_id = '5xKK5hFACprzALHQzfbRHs'; // Reemplaza con el ID real
+$access_token = getAccessToken();
+
+if (!$access_token) {
+    header('Content-Type: application/json');
+    echo json_encode(['error' => 'Unable to fetch Spotify access token']);
+    exit;
+}
+
+// Obtener las canciones de Spotify
+$spotifyTracks = getSpotifyTopTracks($artist_id, $access_token);
+
+// Verificar y combinar las canciones con las de la base de datos
+$tracksWithDetails = [];
+
+foreach ($spotifyTracks as $track) {
+    $name = $track['name'];
+    $album_image = $track['album']['images'][0]['url'] ?? null;
+
+    // Buscar en la base de datos
+    $stmt = $mysqli->prepare("SELECT file_path FROM songs WHERE title = ?");
+    $stmt->bind_param('s', $name);
+    $stmt->execute();
+    $stmt->bind_result($file_path);
+    $found = $stmt->fetch();
+    $stmt->close();
+
+    // Buscar la letra en la base de datos
+    $stmt = $mysqli->prepare("SELECT file_path FROM lyrics WHERE title = ?");
+    $stmt->bind_param('s', $name);
+    $stmt->execute();
+    $stmt->bind_result($lyrics_file);
+    $lyrics_found = $stmt->fetch();
+    $stmt->close();
+
+    // Construir la respuesta
+    $tracksWithDetails[] = [
+        'name' => $name,
+        'album_image' => $album_image,
+        'file_path' => $found ? $base_upload_url . basename($file_path) : null, // Construye el nuevo URL para la canción
+        'lyrics_file' => $lyrics_found ? $base_lyrics_url . basename($lyrics_file) : null, // Construye el nuevo URL para la letra
     ];
 }
 
-// Cerrar conexión a la base de datos
+// Cerrar la conexión a la base de datos
 $mysqli->close();
 
-// Establecer el encabezado como JSON y devolver la respuesta
+// Devolver el JSON al frontend
 header('Content-Type: application/json');
-echo json_encode(['tracks' => $tracks]);
+echo json_encode(['tracks' => $tracksWithDetails]);
+?>

@@ -6,7 +6,7 @@ body {
 
 @font-face {
   font-family: "Eras Bold ITC";
-  src: url("./public/assets/fonts/eras-itc-bold.ttf") format("truetype"); /* Ruta relativa */
+  src: url("/assets/fonts/eras-itc-bold.ttf") format("truetype"); /* Ruta relativa */
   font-weight: normal;
   font-style: normal;
 }

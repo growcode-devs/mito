@@ -2,7 +2,7 @@
 
 function getVideos() {
   const myvideos = document.querySelectorAll(".ytvideo");
-  fetch("http://localhost/growcode/web_mitomania/php/get_videos.php", {
+  fetch("php/api_data/get_videos.php", {
     method: "GET",
   })
     .then((response) => {
@@ -77,7 +77,7 @@ contactForm.addEventListener("submit", function (e) {
 
   const formData = new FormData(contactForm);
   //cambiar ruta para deploy
-  fetch("http://localhost/PruebaPHPmailer/send_mail.php", {
+  fetch("../../php/send_mail.php", {
     method: "POST",
     body: formData,
   })

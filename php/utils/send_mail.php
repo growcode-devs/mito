@@ -12,8 +12,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
 
-// $dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Configuración del correo
         $mail->CharSet = 'UTF-8';
         $mail->setFrom($_ENV['SMTP_USERNAME'], 'Formulario'); // Remitente del correo
-        $mail->addAddress('mitomaniachile@gmail.com', 'Destinatario'); // Destinatario
+        $mail->addAddress('p.nadales.j@gmail.com', 'Destinatario'); // Destinatario
         $mail->Subject = 'Nuevo mensaje de contacto';
 
         // Contenido del correo

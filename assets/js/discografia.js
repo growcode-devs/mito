@@ -1,13 +1,16 @@
 // Selecciona el contenedor del álbum
-const album = document.querySelector('.album-container');
+const album = document.querySelector(".album-container");
 
 // Alterna la rotación al hacer clic
-album.addEventListener('click', () => {
-  album.style.transform = album.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+album.addEventListener("click", () => {
+  album.style.transform =
+    album.style.transform === "rotateY(180deg)"
+      ? "rotateY(0deg)"
+      : "rotateY(180deg)";
 });
 
 // URL del endpoint para obtener el último álbum del artista
-const API_URL = "../php/get_latest_album.php";
+const API_URL = "php/api_data/get_latest_album.php";
 
 // Selecciona los elementos del álbum
 const albumFront = document.querySelector(".album-front img");
@@ -19,7 +22,8 @@ fetch(API_URL)
   .then((data) => {
     if (data.album && data.tracks) {
       // Actualizar carátula del álbum
-      albumFront.src = data.album.image || "https://via.placeholder.com/700x700";
+      albumFront.src =
+        data.album.image || "https://via.placeholder.com/700x700";
       albumFront.alt = data.album.name;
 
       // Llenar lista de canciones
