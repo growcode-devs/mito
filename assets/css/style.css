@@ -6,7 +6,7 @@ body {
 
 @font-face {
   font-family: "Eras Bold ITC";
-  src: url("/assets/fonts/eras-itc-bold.ttf") format("truetype"); /* Ruta relativa */
+  src: url("../fonts/eras-itc-bold.ttf") format("truetype"); /* Ruta relativa */
   font-weight: normal;
   font-style: normal;
 }
@@ -351,7 +351,6 @@ footer {
   text-align: right; /* Alinea el texto de la derecha */
   margin: 0;
 }
-
 
 /* Botón inicio */
 

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../spotify_auth.php';
+require_once __DIR__ . '/../config/spotify_auth.php';
 
 
 
@@ -76,8 +76,12 @@ function update_local_data()
 
 function get_top_ten()
 {
-    require_once __DIR__ . '/../config.php';
-    $base_upload_url = 'http://localhost/growcode/hostinger/public_html/uploads/';
+    require_once __DIR__ . '/../config/config.php';
+    // $ruta = __DIR__ . '/../../uploads/';
+    $ruta = realpath(__DIR__ . '/../../uploads/');
+    $ruta = str_replace('\\', '/', $ruta);
+    $base_upload_url = str_replace('C:/xampp/htdocs', 'http://localhost', $ruta);
+
 
     $data = update_local_data();
     // $top_songs = file_get_contents("cache_top_songs.json");
@@ -105,8 +109,8 @@ function get_top_ten()
 
             if ($value['spotify_id'] == $db_value['spotify_id']) { //cuando se arregle la bd cambiar al id
                 // $value['preview'] = true;
-                $value['song_path'] = $db_value['song_path'] ? $base_upload_url . 'songs/' . $db_value['song_path'] : $db_value['song_path'];
-                $value['lyric_path'] = $db_value['lyric_path'] ? $base_upload_url . 'lyrics/' . $db_value['lyric_path'] : $db_value['lyric_path'];
+                $value['song_path'] = $db_value['song_path'] ? $base_upload_url . '/songs/' . $db_value['song_path'] : $db_value['song_path'];
+                $value['lyric_path'] = $db_value['lyric_path'] ? $base_upload_url . '/lyrics/' . $db_value['lyric_path'] : $db_value['lyric_path'];
                 break;
             } else {
                 $value['song_path'] = null;

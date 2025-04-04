@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../config/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['song_file'])) {
     $title = $_POST['title'];

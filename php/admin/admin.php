@@ -129,7 +129,7 @@ $data = get_top_ten();
             </div>
             <div id="lyric-row" class="form-row">
               <label for="lyric">Letra actual:</label>
-              <button id="lyric-btn">
+              <button type="button" id="lyric-btn">
 
                 <a id="dl-lyric" target="_blank" href="" rel="noopener noreferrer">Letra actual</a>
               </button>

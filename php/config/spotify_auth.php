@@ -1,12 +1,17 @@
 <?php
 // spotify_auth.php
+require __DIR__ . '/../vendor/autoload.php';
 
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 // Spotify credentials
-$client_id = 'cb83c5cda57342d7b33dae6046d85d88';
-$client_secret = 'a0a63dba93c64eaf8729155136575797';
-
+$client_id = $_ENV['SPOTIFY_CLIENT_ID'];
+$client_secret = $_ENV['SPOTIFY_CLIENT_SECRET'];
 // Get access token
-function getAccessToken() {
+function getAccessToken()
+{
     global $client_id, $client_secret;  // Make the variables global so they're accessible in the function
 
     $url = 'https://accounts.spotify.com/api/token';
@@ -36,4 +41,3 @@ function getAccessToken() {
     $result = json_decode($response, true);
     return $result['access_token'] ?? null;  // Return null if there's no access token
 }
-?>

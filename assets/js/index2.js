@@ -7,13 +7,10 @@ function getVideos() {
   })
     .then((response) => {
       if (!response.ok) {
-        console.log("error aquí");
       }
       return response.json();
     })
     .then((data) => {
-      console.log(data);
-
       const sort = [2, 0, 1];
       for (let i = 0; i < myvideos.length; i++) {
         myvideos[i].src = `https://www.youtube.com/embed/${data.data[sort[i]]}`;
@@ -77,7 +74,7 @@ contactForm.addEventListener("submit", function (e) {
 
   const formData = new FormData(contactForm);
   //cambiar ruta para deploy
-  fetch("../../php/send_mail.php", {
+  fetch("php/utils/send_mail.php", {
     method: "POST",
     body: formData,
   })

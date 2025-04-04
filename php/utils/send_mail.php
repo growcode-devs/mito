@@ -6,13 +6,13 @@ header("Access-Control-Allow-Origin: *"); //!!!
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -56,6 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode(['message' => '¡Mensaje enviado!']);
     } catch (Exception $e) {
         http_response_code(500);
-        echo json_encode(['error' => "Hubo un problema al enviar el correo: {$mail->ErrorInfo}"]);
+        echo json_encode([
+            'error' => "Hubo un problema al enviar el correo: {$mail->ErrorInfo}",
+            $e
+        ]);
     }
 }

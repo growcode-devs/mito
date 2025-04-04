@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // $dotenv = Dotenv\Dotenv::createImmutable('/home/u417568847/domains/mitomaniachile.com/public_html');
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 $mysqli = new mysqli(

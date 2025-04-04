@@ -1,1 +1,20 @@
 # web_mitomania
+
+**.env**
+
+```bash
+
+SMTP_USERNAME=
+SMTP_PASSWORD=
+
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+
+API_KEY=
+
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+
+```

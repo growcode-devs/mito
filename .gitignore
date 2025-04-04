@@ -1,7 +1,7 @@
+.vscode
 .env
 php/vendor
 /vendor/
 uploads/lyrics/*.txt
 uploads/songs/*.mp3
-q.sql
-media/*
+media/
