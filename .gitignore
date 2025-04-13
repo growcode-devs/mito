@@ -5,3 +5,7 @@ php/vendor
 uploads/lyrics/*.txt
 uploads/songs/*.mp3
 media/
+php/api_data/cache_latest_album.json
+php/api_data/cache_top_songs.json
+php/admin/cache_top_songs.json
+php/api_data/cache_videos.json
