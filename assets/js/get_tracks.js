@@ -1,5 +1,11 @@
 let tracksData = []; // Variable global para almacenar las canciones
 
+// Control de reproducción de pistas
+let currentAudio = null,
+  progressInterval = null,
+  isPlaying = false,
+  currentTrackIndex = null;
+
 // Petición AJAX para obtener los datos
 $.ajax({
   //   url: "../../php/api_data/get_top_ten.php", // Ruta al archivo PHP
@@ -20,6 +26,18 @@ $.ajax({
     console.error("Detalles del error:", xhr.responseText);
   },
 });
+
+//Set default album image
+function resetAlbumImage() {
+  const imageElement = document.querySelector(".music-lyrics-image");
+  imageElement.src = "./assets/img/default_musica.png";
+}
+//Set track album image
+//if not exists, set default
+function updateAlbumImage(albumImage) {
+  const imageElement = document.querySelector(".music-lyrics-image");
+  imageElement.src = albumImage || "./assets/img/default_musica.png";
+}
 
 // Función para llenar las barras de música
 function populateMusicBars(tracks) {
@@ -99,7 +117,8 @@ function openLyricsModal(event) {
     fetch(lyricsFile)
       .then((response) => response.text())
       .then((text) => {
-        lyricsText.innerHTML = `<pre>${text}</pre>`;
+        lyricsText.innerHTML = text;
+        // lyricsText.innerHTML = `<pre>${text}</pre>`;
       })
       .catch((error) => {
         console.error("Error al cargar la letra:", error);
@@ -112,12 +131,77 @@ function openLyricsModal(event) {
   modal.style.display = "flex";
 }
 
-// Control de reproducción de pistas
-let currentAudio = null,
-  progressInterval = null,
-  isPlaying = false,
-  currentTrackIndex = null;
+/*
+Needs ->  clearInterval()
+          setInterval()
+*/
+function startProgressBar(progressBar, duration) {
+  clearInterval(progressInterval);
+  progressInterval = setInterval(() => {
+    const progress = (currentAudio.currentTime / duration) * 100;
+    if (progress <= 100) {
+      progressBar.css("width", `${progress}%`);
+    } else {
+      clearInterval(progressInterval);
+    }
+  }, 100);
+}
+/*
+Needs ->  clearInterval()
+          resetAlbumImage()
+*/
+function resetTrack() {
+  clearInterval(progressInterval);
+  isPlaying = false;
+  currentAudio = null;
+  $(`#progress-bar-${currentTrackIndex} .progress-fill`).css("width", "0%");
+  $(`.play-pause-button`)
+    .eq(currentTrackIndex)
+    .html('<i class="fas fa-play"></i>');
+  resetAlbumImage();
+}
 
+/*
+Needs ->  clearInterval()
+*/
+function pauseAudio(playButton) {
+  currentAudio.pause();
+  isPlaying = false;
+  playButton.html('<i class="fas fa-play"></i>');
+  clearInterval(progressInterval);
+}
+
+/*
+Needs ->  clearInterval()
+          resetAlbumImage()
+*/
+function resetPreviousAudio() {
+  currentAudio.pause();
+  clearInterval(progressInterval);
+  $(`.play-pause-button`)
+    .eq(currentTrackIndex)
+    .html('<i class="fas fa-play"></i>');
+  $(`#progress-bar-${currentTrackIndex} .progress-fill`).css("width", "0%");
+  // resetAlbumImage();
+}
+
+/*
+Needs -> startProgressBar()
+*/
+function resumeAudio(playButton, progressBar) {
+  currentAudio.play();
+  isPlaying = true;
+  playButton.html('<i class="fas fa-pause"></i>');
+  startProgressBar(progressBar, currentAudio.duration);
+}
+
+/*
+Needs ->  updateAlbumImage()
+          pauseAudio()
+          resumeAudio()
+          resetPreviousAudio()
+          startNewAudio()
+*/
 function playPreview(audioPath, albumImage, index) {
   console.log(`Intentando reproducir: ${audioPath}`);
   const playButton = $(`.play-pause-button`).eq(index);
@@ -129,14 +213,26 @@ function playPreview(audioPath, albumImage, index) {
     isPlaying ? pauseAudio(playButton) : resumeAudio(playButton, progressBar);
   } else {
     if (currentAudio) resetPreviousAudio();
-    startNewAudio(audioPath, index, playButton, progressBar);
+    startNewAudio(audioPath, index, playButton, progressBar, albumImage);
   }
 }
 
-function startNewAudio(audioPath, index, playButton, progressBar) {
+/* 
+Needs ->  startProgressBar()
+          resetTrack()
+          resetAlbumImage()
+ */
+function startNewAudio(
+  audioPath,
+  index,
+  playButton,
+  progressBar,
+  albumImage = null
+) {
   currentAudio = new Audio(audioPath);
-
   currentAudio.addEventListener("loadedmetadata", () => {
+    updateAlbumImage(albumImage);
+
     console.log(`Metadata cargada para: ${audioPath}`);
     currentAudio.play();
     isPlaying = true;
@@ -155,61 +251,4 @@ function startNewAudio(audioPath, index, playButton, progressBar) {
     alert("No se pudo reproducir esta canción.");
     resetAlbumImage();
   });
-}
-
-function pauseAudio(playButton) {
-  currentAudio.pause();
-  isPlaying = false;
-  playButton.html('<i class="fas fa-play"></i>');
-  clearInterval(progressInterval);
-}
-
-function resumeAudio(playButton, progressBar) {
-  currentAudio.play();
-  isPlaying = true;
-  playButton.html('<i class="fas fa-pause"></i>');
-  startProgressBar(progressBar, currentAudio.duration);
-}
-
-function resetPreviousAudio() {
-  currentAudio.pause();
-  clearInterval(progressInterval);
-  $(`.play-pause-button`)
-    .eq(currentTrackIndex)
-    .html('<i class="fas fa-play"></i>');
-  $(`#progress-bar-${currentTrackIndex} .progress-fill`).css("width", "0%");
-  resetAlbumImage();
-}
-
-function resetTrack() {
-  clearInterval(progressInterval);
-  isPlaying = false;
-  currentAudio = null;
-  $(`#progress-bar-${currentTrackIndex} .progress-fill`).css("width", "0%");
-  $(`.play-pause-button`)
-    .eq(currentTrackIndex)
-    .html('<i class="fas fa-play"></i>');
-  resetAlbumImage();
-}
-
-function startProgressBar(progressBar, duration) {
-  clearInterval(progressInterval);
-  progressInterval = setInterval(() => {
-    const progress = (currentAudio.currentTime / duration) * 100;
-    if (progress <= 100) {
-      progressBar.css("width", `${progress}%`);
-    } else {
-      clearInterval(progressInterval);
-    }
-  }, 100);
-}
-
-function updateAlbumImage(albumImage) {
-  const imageElement = document.querySelector(".music-lyrics-image");
-  imageElement.src = albumImage || "./assets/img/default_musica.png";
-}
-
-function resetAlbumImage() {
-  const imageElement = document.querySelector(".music-lyrics-image");
-  imageElement.src = "./assets/img/default_musica.png";
 }

@@ -1,62 +1,62 @@
 @font-face {
-    font-family: 'Eras Bold ITC';
-    src: url('/web_mitomania/public/assets/fonts/eras-itc-bold.ttf') format('truetype'); /* Ruta relativa */
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  .section-title-container {
-    display: flex; /* Flexbox asegura el centrado */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Opcional si necesitas centrar verticalmente en un contexto más grande */
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
-    margin: 0 auto; /* Centrado automático */
-  }
-  
+  font-family: "Eras Bold ITC";
+  src: url("/web_mitomania/public/assets/fonts/eras-itc-bold.ttf")
+    format("truetype"); /* Ruta relativa */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.section-title-container {
+  display: flex; /* Flexbox asegura el centrado */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Opcional si necesitas centrar verticalmente en un contexto más grande */
+  max-width: auto; /* Asegura que ocupe todo el ancho disponible */
+  margin: 0 auto; /* Centrado automático */
+}
+
+.section-title {
+  font-family: "Eras Bold ITC", sans-serif; /* Usa la fuente personalizada */
+  font-size: 4rem; /* Tamaño inicial del título */
+  letter-spacing: 0.3rem; /* Espaciado amplio entre letras */
+  color: white; /* Color del texto */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  position: relative; /* Para posicionar la línea decorativa */
+  margin: 30px 0 40px; /* Espaciado superior e inferior */
+  display: inline-block; /* Mantiene el tamaño del texto compacto */
+  text-align: center; /* Centrado del texto */
+}
+
+/* Línea debajo del título */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100%; /* El ancho será igual al del texto */
+  height: 3px; /* Grosor de la línea */
+  background: white; /* Color de la línea */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Efecto de luz */
+  margin: 10px auto; /* Centrado y espaciado inferior */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
   .section-title {
-    font-family: 'Eras Bold ITC', sans-serif; /* Usa la fuente personalizada */
-    font-size: 4rem; /* Tamaño inicial del título */
-    letter-spacing: 0.3rem; /* Espaciado amplio entre letras */
-    color: white; /* Color del texto */
-    text-transform: uppercase; /* Todo en mayúsculas */
-    position: relative; /* Para posicionar la línea decorativa */
-    margin: 30px 0 40px; /* Espaciado superior e inferior */
-    display: inline-block; /* Mantiene el tamaño del texto compacto */
-    text-align: center; /* Centrado del texto */
+    font-size: 3rem; /* Reducir tamaño en pantallas medianas */
+    letter-spacing: 0.2rem;
   }
-  
-  /* Línea debajo del título */
+
   .section-title::after {
-    content: '';
-    display: block;
-    width: 100%; /* El ancho será igual al del texto */
-    height: 3px; /* Grosor de la línea */
-    background: white; /* Color de la línea */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Efecto de luz */
-    margin: 10px auto; /* Centrado y espaciado inferior */
-    border-radius: 5px; /* Bordes ligeramente redondeados */
+    height: 2px; /* Línea más delgada en pantallas medianas */
   }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: 3rem; /* Reducir tamaño en pantallas medianas */
-      letter-spacing: 0.2rem;
-    }
-  
-    .section-title::after {
-      height: 2px; /* Línea más delgada en pantallas medianas */
-    }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.5rem; /* Reducir tamaño en pantallas pequeñas */
+    letter-spacing: 0.1rem;
   }
-  
-  @media (max-width: 480px) {
-    .section-title {
-      font-size: 2.5rem; /* Reducir tamaño en pantallas pequeñas */
-      letter-spacing: 0.1rem;
-    }
-  
-    .section-title::after {
-      height: 2px; /* Línea más delgada en pantallas pequeñas */
-    }
+
+  .section-title::after {
+    height: 2px; /* Línea más delgada en pantallas pequeñas */
   }
-  
+}

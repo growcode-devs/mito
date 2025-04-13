@@ -9,3 +9,4 @@ php/api_data/cache_latest_album.json
 php/api_data/cache_top_songs.json
 php/admin/cache_top_songs.json
 php/api_data/cache_videos.json
+changes.txt

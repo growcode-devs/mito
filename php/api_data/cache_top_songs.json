@@ -1,12 +1,12 @@
 {
-    "date": "2025-04-04",
+    "date": "2025-04-14",
     "songs": {
         "top_tracks": [
             {
                 "top": 1,
                 "name": "Ya Fue",
                 "album_name": "Ya Fue",
-                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b273d9e25caa2d1362f83d0a1d03",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b273d802dd33466ddb495d8089f2",
                 "url": "https:\/\/open.spotify.com\/track\/38yUdaaCIrc41TKXX5QYLu",
                 "spotify_id": "38yUdaaCIrc41TKXX5QYLu"
             },
@@ -44,11 +44,11 @@
             },
             {
                 "top": 6,
-                "name": "Quiero Bailar Contigo",
-                "album_name": "Mitoman\u00eda",
-                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
-                "url": "https:\/\/open.spotify.com\/track\/17KJo1lpKYdR37TgB4XHl6",
-                "spotify_id": "17KJo1lpKYdR37TgB4XHl6"
+                "name": "Distante",
+                "album_name": "Distante",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b2733097b305583d3e1074e39558",
+                "url": "https:\/\/open.spotify.com\/track\/3DMUdiFLKC2rnhpC2A8IRb",
+                "spotify_id": "3DMUdiFLKC2rnhpC2A8IRb"
             },
             {
                 "top": 7,
@@ -60,6 +60,14 @@
             },
             {
                 "top": 8,
+                "name": "Quiero Bailar Contigo",
+                "album_name": "Mitoman\u00eda",
+                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
+                "url": "https:\/\/open.spotify.com\/track\/17KJo1lpKYdR37TgB4XHl6",
+                "spotify_id": "17KJo1lpKYdR37TgB4XHl6"
+            },
+            {
+                "top": 9,
                 "name": "La Respuesta",
                 "album_name": "Mitoman\u00eda",
                 "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
@@ -67,20 +75,12 @@
                 "spotify_id": "4f5rgEOHEr6bMP22TYGHFP"
             },
             {
-                "top": 9,
+                "top": 10,
                 "name": "Helado de Invierno",
                 "album_name": "Mitoman\u00eda",
                 "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b27307e1db3f1b00253bb241903c",
                 "url": "https:\/\/open.spotify.com\/track\/55J96FuEq1rYrOiDecDsbP",
                 "spotify_id": "55J96FuEq1rYrOiDecDsbP"
-            },
-            {
-                "top": 10,
-                "name": "\u00bfA Qu\u00e9 Hora?",
-                "album_name": "\u00bfA Qu\u00e9 Hora?",
-                "album_image": "https:\/\/i.scdn.co\/image\/ab67616d0000b2736d7a6ccc3424649996c10692",
-                "url": "https:\/\/open.spotify.com\/track\/4h6TIrOzFNZPeXXF3yD4f3",
-                "spotify_id": "4h6TIrOzFNZPeXXF3yD4f3"
             }
         ]
     }
