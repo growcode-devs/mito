@@ -94,7 +94,7 @@ function get_top_ten()
     $result = $mysqli->query($query);
 
     if (!$result) {
-        die(json_encode(['error' => 'Error al realizar la consulta: ' . $mysqli->error]));
+        die(json_encode(['error' => 'Error al realizar la consulta: ' . $mysqli->errno]));
     }
     // var_dump($result->fetch_all(MYSQLI_ASSOC));
     $db_songs = $result->fetch_all(MYSQLI_ASSOC);
